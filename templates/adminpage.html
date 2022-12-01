@@ -31,13 +31,13 @@
     {% for char in posts %}
     <div class="p-3 mb-3 mx-auto shadow " style="width: 80%; background-color: rgb(205, 205, 205);" >
         <small>Created {{char.created}}</small>
-        <small class="text-dark"  style="float:right; font-weight: bold;">Category : {{char.category}}</small>
+        {% comment %} <small class="text-dark"  style="float:right; font-weight: bold;">Category : {{char.category}}</small> {% endcomment %}
         <div class="card shadow">
             <a href="{% url 'single' char.id %}"><img class="card-img-top" src="{{char.image.url}}" alt="Title"></a>
             <div class="card-body">
                 <h4 class="card-title"  style="margin-left: 10px;">{{char.title}}</h4>
                 <h5 class="card-title">{{char.subtitle}}</h5>
-                <p class="card-text">{{char.body}}</p>
+                <p class="card-text">{{char.body|truncatewords_html:40}}</p>
             </div>
             <a href="{% url 'editpost' char.id %}"><i class="fa-solid fa-pen-to-square fa-xl" style=" display:block; float: right;"></i></a>
         </div>
