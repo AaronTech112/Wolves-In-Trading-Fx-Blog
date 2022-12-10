@@ -90,11 +90,14 @@ WSGI_APPLICATION = 'wolvesblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'Dczo9abn7yu8SNyii63l',
+        'HOST': 'containers-us-west-145.railway.app',
+        'PORT': '6774',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
